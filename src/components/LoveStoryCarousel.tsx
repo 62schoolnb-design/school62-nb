@@ -80,7 +80,7 @@ export default function LoveStoryCarousel() {
 
   const currentSlide = slides[currentIndex];
   const activeImage = customImages[currentSlide.id] || currentSlide.image;
-  const hasError = imageErrors[currentSlide.id] && !customImages[currentSlide.id];
+  const hasError = (!activeImage || imageErrors[currentSlide.id]) && !customImages[currentSlide.id];
 
   return (
     <section id="story-section" className="relative w-full bg-[#fffaf8] text-neutral-800 py-16 sm:py-20 px-4 sm:px-8 overflow-hidden">
@@ -144,16 +144,19 @@ export default function LoveStoryCarousel() {
                 ) : (
                   <div
                     onClick={() => fileInputRef.current?.click()}
-                    className="w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-b from-amber-50/70 to-red-50/70 text-center cursor-pointer hover:bg-amber-100/50 transition-colors"
+                    className="w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-b from-red-50/80 via-white to-amber-50/80 text-center cursor-pointer hover:bg-red-100/50 transition-colors border-2 border-dashed border-red-300 rounded-xl"
                   >
-                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-700 flex items-center justify-center mb-2 shadow-sm">
-                      <Upload className="w-6 h-6" />
+                    <div className="w-12 h-12 rounded-full bg-red-100 text-red-700 flex items-center justify-center mb-2 shadow-sm animate-bounce" style={{ animationDuration: '2.5s' }}>
+                      <Camera className="w-6 h-6" />
                     </div>
-                    <p className="text-xs font-bold text-neutral-800 mb-0.5">
+                    <p className="text-xs font-bold text-neutral-800 mb-1">
                       {currentSlide.title}
                     </p>
-                    <p className="text-[11px] text-red-700 font-medium underline underline-offset-2">
-                      Зургаа сонгож оруулах (IMG_7570.jpeg)
+                    <span className="text-[11px] font-semibold text-white bg-red-600 hover:bg-red-700 py-1.5 px-3 rounded-full shadow-xs transition">
+                      Энд дарж IMG_7570.jpeg зургаа оруулах
+                    </span>
+                    <p className="text-[10px] text-neutral-500 mt-1">
+                      (Бодит гэрэл зургаа шууд сонгоно)
                     </p>
                   </div>
                 )}

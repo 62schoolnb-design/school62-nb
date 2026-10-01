@@ -67,7 +67,7 @@ export const WEDDING_DATA = {
       date: '2015.09.01',
       title: 'Сайн дурын үйл ажиллагаа',
       description: 'Монголын Улаан Загалмайн нийгэмлэг, хүмүүнлэгийн сайн дурын үйлс...',
-      image: '/IMG_7570.jpeg',
+      image: '',
     }
   ] as StorySlide[],
 
