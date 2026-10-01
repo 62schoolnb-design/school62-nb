@@ -1,0 +1,155 @@
+import { StorySlide, ScheduleItem, WeddingRequestItem, GuestWish } from '../types';
+
+export const WEDDING_DATA = {
+  groom: '50 жил',
+  bride: '',
+  weddingDate: '2026-10-07T17:00:00',
+  formattedDate: '2026 . 10 . 07',
+  formattedTime: '17:00',
+  venueName: 'The Corporate and Convention center',
+  locationCity: 'Улаанбаатар хот, ХУД, 15-р хороо',
+  venueAddress: 'ХУД, 15-р хороо, The Corporate and Convention center 2 давхарт А танхим',
+  hallDetails: '2 давхарт, А танхим',
+  welcomingInfo: 'Угталтын үйл ажиллагаа эхлэнэ',
+  fullDateText: '2026 оны 10 дугаар сарын 07-ны Лхагва гарагт, 17:00 цаг',
+  invitationText: 'Эрхэм хүндэт таныг Нийслэлийн ерөнхий боловсролын 62 дугаар сургуулийн түүхт 50 жилийн ойн баярын хүндэтгэлийн цэнгүүнд хүрэлцэн ирэхийг урьж байна.',
+  mapUrl: 'https://maps.apple.com/place?place-id=I15F8266DA4124870&address=Mahatma+Gandhi+street-39%2C+Khan-Uul+district+15th+khoroo%2C+Ulaanbaatar%2C+Mongolia&coordinate=47.903850%2C106.922647&name=The+Corporate+Hotel+and+Convention+Centre&_provider=9902',
+  googleMapsUrl: 'https://maps.apple.com/place?place-id=I15F8266DA4124870&address=Mahatma+Gandhi+street-39%2C+Khan-Uul+district+15th+khoroo%2C+Ulaanbaatar%2C+Mongolia&coordinate=47.903850%2C106.922647&name=The+Corporate+Hotel+and+Convention+Centre&_provider=9902',
+  contactPhoneGroom: '+976 90059016',
+  contactPhoneBride: '+976 88056804',
+
+  // Google Sheets Webhook URL for RSVP synchronization
+  // If provided, all RSVPs will automatically be sent to your Google Sheet!
+  googleSheetsWebhookUrl: 'https://script.google.com/macros/s/AKfycbyKyZY9IZbcQgVFpBf8pFU-Xtf-9UqxJp8Kny93wiS2sa6DZoLJn5m7ZGhfJdsB4BYO/exec',
+
+  // Мэндчилгээ
+  greetingPoem: [
+    'Эрдэм мэдлэгийн оч бадрааж',
+    'эх орныхоо ирээдүйг бэлтгэсэн',
+    'хагас зуун жилийн түүхтэй',
+    '62 дугаар сургуулийн хөгжил дэвшил,',
+    'амжилт бүтээлийн буухиаг хамтдаа бүтээлцсэн',
+    'таньд баярын мэнд хүргэе!'
+  ],
+
+  // Story Slides
+  storySlides: [
+    {
+      id: '1',
+      date: '1975.09.01',
+      title: 'Бидний анхны сургалтын үйл ажиллагаа',
+      description: 'Анхны сургуулийн нээлтээс хойш 50 жил өнгөрчээ...',
+      image: 'https://lh3.googleusercontent.com/d/1RZHn7xeFu45OOl7AZcExcmFoXtXmo3_I',
+    },
+    {
+      id: '2',
+      date: '1985.09.01',
+      title: 'Амжилт бүтээл арвин',
+      description: 'Хамтдаа хөгжсөн туршлага бүхэн арвин.',
+      image: 'https://lh3.googleusercontent.com/d/1kfaCAXdMygKexfjt1S27Q7_rWgF9Iwva',
+    },
+    {
+      id: '3',
+      date: '1995.09.01',
+      title: 'Бидний амжилт бүтээл',
+      description: 'Бидний хөгжлийн түүчээ болсон сурагчид.',
+      image: 'https://lh3.googleusercontent.com/d/1vFUuilV4S82nJ4cGg9A8MPy6Q-2oHrnk',
+    },
+    {
+      id: '4',
+      date: '2005.09.01',
+      title: 'Бидний сургууль',
+      description: '"Бидний сургууль" - "Бидний түүх"',
+      image: 'https://lh3.googleusercontent.com/d/1evosK0Sn83g1I5gHa37R-aMjVE5glczL',
+    },
+    {
+      id: '5',
+      date: '2015.09.01',
+      title: 'Сайн дурын үйл ажиллагаа',
+      description: 'Монголын Улаан Загалмайн нийгэмлэг, хүмүүнлэгийн сайн дурын үйлс...',
+      image: '/IMG_7570.jpeg',
+    }
+  ] as StorySlide[],
+
+  // Schedule Timeline for 50th Anniversary
+  schedule: [
+    {
+      id: '1',
+      time: '17:00',
+      title: 'Зочид хүлээн авах',
+      subtitle: 'Эрхэм багш нар, төгсөгчдийг угтан авах'
+    },
+    {
+      id: '2',
+      time: '18:00',
+      title: 'Дурсгалын зураг татуулах',
+      subtitle: 'Түүхт 50 жилийн хүндэтгэлийн зураг авалт'
+    },
+    {
+      id: '3',
+      time: '19:00',
+      title: 'Ойн баярын нээлтийн ёслол',
+      subtitle: 'Төрийн дуулал, туг залах, хүндэтгэлийн нээлт'
+    },
+    {
+      id: '4',
+      time: '20:00',
+      title: 'Хүндэтгэлийн концерт & Шагнал гардуулах',
+      subtitle: 'Сургуулийн бахархалт багш, төгсөгчдийг шагнах'
+    },
+    {
+      id: '5',
+      time: '21:00',
+      title: 'Үе үеийн төгсөгчдийн уулзалт',
+      subtitle: 'Дурсамж дэлгэх чөлөөт уулзалт'
+    },
+    {
+      id: '6',
+      time: '22:00',
+      title: 'Ойн баярын бялууны ёслол',
+      subtitle: '50 жилийн хүндэтгэлийн ёслол'
+    }
+  ] as ScheduleItem[],
+
+  // Anniversary Requests / Guidelines
+  requests: [
+    {
+      id: 'dress',
+      title: 'Дресс код',
+      detail: 'Баярын / Албан',
+      iconName: 'shirt'
+    },
+    {
+      id: 'flower',
+      title: 'Цэцэг',
+      detail: 'Талархлын цэцэг',
+      iconName: 'flower'
+    },
+    {
+      id: 'child',
+      title: 'Төгсөгчид',
+      detail: 'Үе үеийнхэн',
+      iconName: 'baby'
+    },
+    {
+      id: 'gift',
+      title: 'Дурсамж',
+      detail: 'Сэтгэгдэл & зураг',
+      iconName: 'gift'
+    }
+  ] as WeddingRequestItem[],
+
+  guidelineCards: [
+    {
+      title: 'Хүндэтгэлийн хүлээн авалт',
+      text: 'Ойн баярын нээлтийн үйл ажиллагаа эхлэхээс өмнө ирж, анги хамт олон, багш нартайгаа дурсгалын зураг татуулахыг урьж байна'
+    },
+    {
+      title: 'Цаг баримтлах',
+      text: 'Баярын ёслол эхлэхээс 30 минутын өмнө хүрэлцэн ирж суудлаа эзэлнэ үү'
+    }
+  ],
+
+  // Initial wishes
+  initialWishes: [] as GuestWish[]
+};
